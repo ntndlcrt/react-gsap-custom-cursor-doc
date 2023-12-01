@@ -1,0 +1,40 @@
+## Update cursor on hover
+
+Any html element with a `data-cursor`attribute will be able to update the cursor on hover.
+
+```html copy
+<h1 data-cursor="--lg">Hover me to make the cursor bigger !</h1>
+```
+
+You can chain classes and create your own cursor styles.
+
+```css copy
+.cursor.--red::before {
+    background: red;
+}
+```
+
+```html copy
+<h1 data-cursor="--lg --red">Hover me to make the cursor bigger and red !</h1>
+```
+
+## Add some text to the cursor
+
+You can add some text to the cursor by adding a `data-cursor-text` attribute to any html element.
+
+```html copy
+<h1 data-cursor-text="Hi !" data-cursor="--lg">Hover me to display some text in the cursor !</h1>
+```
+
+## Make cursor sticky
+
+To make the cursor sticky, you need two things : an element that will trigger the stickiness and a stick area to choose where the cursor will stick.
+
+```html copy
+<div data-cursor-stick="#stick-area">
+    <h1>Hover me to make the card to make the cursor sticky on the bottom !</h1>
+    <p>It will follow the user's cursor slowly until you stop hovering the global div</p>
+    <div id="stick-area">
+    </div>
+</div>
+```

@@ -1,0 +1,70 @@
+import { Tabs } from "nextra/components"
+
+## Prerequesites
+
+Ensure your project has [react &#x2197;](https://react.dev/learn/installation), [react-dom &#x2197;](https://www.npmjs.com/package/react-dom) and [gsap &#x2197;](https://gsap.com/docs/v3/Installation).
+If not, run the following in your terminal :
+
+<Tabs items={["npm", "yarn"]}>
+  <Tabs.Tab>
+    ```bash copy
+    $ npm install react react-dom gsap 
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    $ yarn add react react-dom gsap
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Install package
+
+Go to your project root directory and run :
+
+<Tabs items={["npm", "yarn"]}>
+  <Tabs.Tab>
+    ```bash copy
+    $ npm install react-gsap-custom-cursor
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    $ yarn add react-gsap-custom-cursor
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Import component
+
+```javascript copy filename="App.js"
+import { Cursor } from "react-gsap-custom-cursor"
+
+const App = () => {
+  return (
+    <div>
+      <Cursor />
+    </div>
+  )
+}
+```
+
+## Fix the 'use client' error
+
+If you get the following error :
+
+```bash
+Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons: 1. You might have mismatching versions of React and the renderer (such as React DOM) 2. You might be breaking the Rules of Hooks 3. You might have more than one copy of React in the same app See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+```
+
+You need to create a custom Cursor component in your react app and give it the `'use client'` directive :
+
+```javascript copy filename="MyCursorComponent.js"
+"use client"
+
+import { Cursor } from "react-gsap-custom-cursor"
+
+const MyCursorComponent = () => {
+  return <Cursor />
+}
+```
